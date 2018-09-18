@@ -3,7 +3,6 @@ package assignment1;
 //Class: Advanced Software Design
 //Date: 9/12/2018
 
-
 import java.util.*;
 
 public class Main {
