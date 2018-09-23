@@ -64,19 +64,61 @@ public class Rational {
 		}
 		return rat1;
 	}
-	public Rational divideRational(Rational number){
+	public static Rational divideRational(Rational number1, Rational number2){
+		Rational rat1 = new Rational();
+		int num;
+		int den;
 		
-		return number;
+		num = number2.denominator;
+		den = number2.numerator;
+		
+		rat1.numerator = num;
+		rat1.denominator = den;
+		
+		return multiplyRational(number1, rat1);
+	}
+	public static Rational multiplyRational(Rational number1, Rational number2){
+		Rational rat1 = new Rational();
+		
+		rat1.numerator = number1.numerator * number2.numerator;
+		rat1.denominator = number1.denominator * number2.denominator;
+		
+		return rat1;
+	}
+	public String toString(int precision) {
+		
+		double floatPoint = this.numerator / this.denominator;
+		
+		return String.format("%d/%d, %5f", this.numerator, this.denominator, floatPoint);
 	}
 	public static void main(String[] args) {
 		
-		Rational num1 = new Rational(1, 9);
-		Rational num2 = new Rational(3, 5);
+		Rational num1 = new Rational(1, 2);
+		Rational num2 = new Rational(3, 4);
 		Rational num3 = new Rational();
+		Rational num4 = new Rational();
+		Rational num5 = new Rational();
+		Rational num6 = new Rational();
 		
-		num3 = addRational(num1, num2);
+		//num3 = addRational(num1, num2);
 		
-		System.out.printf("%d / %d", num3.numerator, num3.denominator);
+		//System.out.printf("%d / %d%n", num3.numerator, num3.denominator);
+		
+		
+		num4 = subtractRational(num1, num2);
+		
+		System.out.printf("%d / %d%n", num4.numerator, num4.denominator);
+		
+		num6 = multiplyRational(num1, num2);
+		
+		System.out.printf("%d / %d%n", num6.numerator, num6.denominator);
+		
+		num5 = divideRational(num1, num2);
+		
+		System.out.printf("%d / %d%n", num5.numerator, num5.denominator);
+		
+		System.out.println(num5.toString(2));
+		
 	}
 	
 }
