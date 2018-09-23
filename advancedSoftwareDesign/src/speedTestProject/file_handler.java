@@ -37,7 +37,7 @@ public class file_handler {
 	public void ReadTextFile() throws IOException {
 		
 		Path file = Paths.get("speedTest.txt");
-		
+		System.out.println();
 		System.out.println(Files.readAllLines(file));
 		
 		

@@ -20,8 +20,8 @@ public class Main {
 		double uploadSpeed = 77;
 		double downloadSpeed = 10;
 		
-		file.createTextFile(dateTime, uploadSpeed, downloadSpeed);
+		//file.createTextFile(dateTime, uploadSpeed, downloadSpeed);
 		
-		file.ReadTextFile();
+		//file.ReadTextFile();
     }
 }
