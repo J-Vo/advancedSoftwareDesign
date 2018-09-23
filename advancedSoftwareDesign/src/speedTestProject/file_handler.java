@@ -1,4 +1,3 @@
-package speedTestProject;
 
 import java.io.IOException;
 import java.lang.IllegalStateException;
@@ -30,9 +29,6 @@ public class file_handler {
 		writeSuccessfulFailed = "File and data successfully created.";
 		System.out.print(writeSuccessfulFailed);
 		return writeSuccessfulFailed;
-	}
-	public String ModifyTextFile() {
-		
 	}
 	public void ReadTextFile() throws IOException {
 		

@@ -7,11 +7,12 @@ public class connectivity_test {
 
 	public boolean isConnected() 
     { 
-        try { 
-            URL url = new URL("https://www.google.com/"); 
+        try {
+            URL url = new URL("https://www.nsight.com/");
+           
             URLConnection connection = url.openConnection(); 
             connection.connect(); 
-  
+
             System.out.println("Connection Successful");
             
             return true;

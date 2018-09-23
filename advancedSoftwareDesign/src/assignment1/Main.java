@@ -180,7 +180,7 @@ public class Main {
 			// Create instance of Scanner object.
 			Scanner input = new Scanner(System.in);
 			
-			System.out.printf(" Welcome%nEnter in integer form which module you'd like to run.%n 1. Prime Numbers%n 2. Palindrome%n 3. Test Scores%n 4. Quit%n");
+			System.out.printf("Welcome%nEnter in integer form which module you'd like to run.%n 1. Prime Numbers%n 2. Palindrome%n 3. Test Scores%n 4. Quit%n");
 			// This do while will keep looping if the user consistently enters invalid input.
 			do {
 				try{
