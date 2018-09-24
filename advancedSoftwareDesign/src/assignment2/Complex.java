@@ -7,6 +7,19 @@ public class Complex {
 		private double realPart;
 		private double imaginaryPart;
 		
+		public double getRealPart() {
+			return realPart;
+		}
+		public void setRealPart(double realPart) {
+			this.realPart = realPart;
+		}
+		public double getImaginaryPart() {
+			return imaginaryPart;
+		}
+		public void setImaginaryPart(double imaginaryPart) {
+			this.imaginaryPart = imaginaryPart;
+		}
+
 		Complex(){
 			this.realPart = 0;
 			this.imaginaryPart = 0;
@@ -16,24 +29,30 @@ public class Complex {
 			this.imaginaryPart = imaginary;
 		}
 		
-		public double addNumbers(double number)
+		public Complex addNumbers(Complex number)
 		{
-			double additionResult;
+			Complex resultNum = new Complex(); 
 
-			additionResult = this.realPart + number;
-
-			return additionResult;
+			resultNum.setRealPart(this.getRealPart() + number.getRealPart());
+			resultNum.setImaginaryPart(this.getImaginaryPart() + number.getImaginaryPart());
+			
+			return resultNum;
 		}
 		public String toString() {
-			return String.format("(%d, %d)", this.realPart, this.imaginaryPart);
+			return String.format("(%.1f, %.1f)", this.getRealPart(), this.getImaginaryPart());
 		}
 		
-		public String subtractNumbers(Complex number){
-			
-			return null;
-			
+		public Complex subtractNumbers(Complex number){
+				
+			Complex resultNum = new Complex(); 
+
+			resultNum.setRealPart(this.getRealPart() - number.getRealPart());
+			resultNum.setImaginaryPart(this.getImaginaryPart() - number.getImaginaryPart());
+				
+			return resultNum;
 		}
 		public static void main(String[] args) {
+			
 			double inputx;
 			double inputy;
 			
@@ -57,8 +76,12 @@ public class Complex {
 			
 			Complex c2 = new Complex(inputx, inputy);
 			
-			c1.addNumbers(c2);
-			c1.subtractNumbers(c2);
+			Complex c3 = new Complex();
+			
+			c3 = c1.addNumbers(c2);
+			System.out.printf("Addition result: %s%n" , c3.toString());
+			c3 = c1.subtractNumbers(c2);
+			System.out.printf("Subtraction result: %s%n" , c3.toString());
 
 		}
 }
