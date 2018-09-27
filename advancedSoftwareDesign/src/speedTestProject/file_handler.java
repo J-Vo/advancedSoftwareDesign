@@ -1,4 +1,4 @@
-
+package speedTestProject;
 import java.io.IOException;
 import java.lang.IllegalStateException;
 import java.nio.charset.Charset;
