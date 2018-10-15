@@ -1,5 +1,5 @@
 package assignment3;
 
-public class Parallelogram {
+public class Parallelogram extends Quadrilateral{
 
 }

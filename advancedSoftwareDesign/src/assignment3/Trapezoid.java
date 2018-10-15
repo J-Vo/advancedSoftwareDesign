@@ -1,5 +1,5 @@
 package assignment3;
 
-public class Trapezoid {
+public class Trapezoid extends Quadrilateral{
 
 }

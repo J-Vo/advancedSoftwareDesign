@@ -1,5 +1,5 @@
 package assignment3;
 
-public class Square {
+public class Square extends Quadrilateral{
 
 }
