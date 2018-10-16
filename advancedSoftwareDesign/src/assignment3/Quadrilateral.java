@@ -42,12 +42,21 @@ public class Quadrilateral {
 		this.setTopLeft(tl);
 		this.setTopRight(tr);		
 	}
-	Quadrilateral(Point tl, Point tr, Point bl, Point br){
+	Quadrilateral(Point bl, Point br, Point tr, Point tl){
 		 this.setBottomLeft(bl);
 		 this.setBottomRight(br);
 		 this.setTopLeft(tl);
 		 this.setTopRight(tr);
 	}
-
+	public double calculateArea(){
+		double area = 0;
+		return area;
+	}
+	public String toString() {                                            
+	      return String.format("(" + this.getBottomLeft().getX() + ", " + this.getBottomLeft().getY() + ") " + "," +
+	    		  "(" +  this.getBottomRight().getX() + ", " + this.getBottomRight().getY() + ") " + "," +
+	    		  "(" + this.getTopRight().getX() + ", " + this.getTopRight().getY() + ") " + "," +
+	    		  "(" + this.getTopLeft().getX() + ", " + this.getTopLeft().getY() + ")");
+	}
 	
 }
