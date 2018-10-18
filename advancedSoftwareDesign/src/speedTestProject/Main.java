@@ -15,14 +15,18 @@ public class Main{
 		  
 		file_handler file = new file_handler();
 		
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		Date date = new Date();
-		String dateTime = formatter.format(date);
-		double uploadSpeed = 77;
-		double downloadSpeed = 10;
+			
+		//file.executeBat();
+		
+		//SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		//Date date = new Date();
+		//String dateTime = formatter.format(date);
+		//double uploadSpeed = 77;
+		//double downloadSpeed = 10;
 		
 		//file.createTextFile(dateTime, uploadSpeed, downloadSpeed);
 		
-		//file.ReadTextFile();
+		file.ReadTextFile();
+		file.createGraphFile();
     }
 }

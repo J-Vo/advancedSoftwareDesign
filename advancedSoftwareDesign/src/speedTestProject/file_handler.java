@@ -1,4 +1,9 @@
 package speedTestProject;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.IllegalStateException;
 import java.nio.charset.Charset;
@@ -8,6 +13,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 import java.util.Arrays;
 import java.util.Formatter;
 import java.util.FormatterClosedException;
@@ -32,11 +38,35 @@ public class file_handler {
 	}
 	public void ReadTextFile() throws IOException {
 		
-		Path file = Paths.get("speedTest.txt");
-		System.out.println();
-		System.out.println(Files.readAllLines(file));
+	   
+	    File file = 
+	      new File("C:\\Users\\Jordan\\Desktop\\output.txt"); 
+	    Scanner sc = new Scanner(file);
+	    String sentance = sc.nextLine(); 
+	    
+	    while (sc.hasNextLine()) {
+	        System.out.println(sc.nextLine());
+
+	    	}
+		} 
+	
+	public void executeBat() throws IOException {
 		
+		ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "speedtest.bat");
+		File dir = new File("C:\\Users\\Jordan\\Desktop");
+		pb.directory(dir);
+		Process p = pb.start();
+	}
+	public void createGraphFile() throws IOException{
 		
-		
+		try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jordan\\Desktop\\output.txt"));
+			     BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Jordan\\Desktop\\data.txt"))) {
+			    String line;
+			    while ((line = br.readLine()) != null) {
+			        String[] values = line.split(" ");
+			        if (values.length >= 3)
+			            bw.write(values[0] + ' ' + values[1] + ' ' + values[2] + '\n');
+			    }
+		}
 	}
 }
