@@ -5,9 +5,12 @@ import java.nio.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+
+import org.json.JSONException;
+import org.json.simple.parser.ParseException;
 public class Main{
 	
-	public static void main(String args[]) throws IOException{ 
+	public static void main(String args[]) throws IOException, InterruptedException, JSONException, ParseException{ 
 		
 		connectivity_test x = new connectivity_test();
 	
@@ -15,18 +18,8 @@ public class Main{
 		  
 		file_handler file = new file_handler();
 		
-			
-		//file.executeBat();
+		file.executeBat();
 		
-		//SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		//Date date = new Date();
-		//String dateTime = formatter.format(date);
-		//double uploadSpeed = 77;
-		//double downloadSpeed = 10;
-		
-		//file.createTextFile(dateTime, uploadSpeed, downloadSpeed);
-		
-		file.ReadTextFile();
 		file.createGraphFile();
     }
 }

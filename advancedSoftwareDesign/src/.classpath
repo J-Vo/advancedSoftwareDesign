@@ -3,5 +3,8 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_161/lib/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_161/jre/lib/org.json-chargebee-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_161/lib/json-simple-1.1.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

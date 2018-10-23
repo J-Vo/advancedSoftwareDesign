@@ -1,4 +1,4 @@
-package speedTestProject;
+package application;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,51 +19,57 @@ import java.util.List;
 
 public class file_handler {
 	
+	
 	private static final Pattern SPACE = Pattern.compile(" ");
 	
 	public static String createTextFile(String dateTime, double uploadSpeed, double downloadSpeed, double ping) throws IOException {
-		//TODO: Check if file already exists, if not...
+		
 		String stringUploadSpeed = String.valueOf(uploadSpeed);
 		String stringDownloadSpeed = String.valueOf(downloadSpeed);
 		String stringPing = String.valueOf(ping);
 		String writeSuccessfulFailed = null;
 		
 		List<String> lines = Arrays.asList(dateTime, stringUploadSpeed, stringDownloadSpeed, stringPing);
-		Path file = Paths.get("speedTestProject\\speedTest.txt");
+		Path file = Paths.get("C:\\Users\\Jordan\\eclipse-workspace\\speedTest\\src\\application\\speedTest.txt");
 		Files.write(file, lines, StandardOpenOption.APPEND);
 		
 		writeSuccessfulFailed = "File and data successfully created.";
 		System.out.print(writeSuccessfulFailed);
+
 		return writeSuccessfulFailed;
 	}
 	public void ReadTextFile() throws IOException {
 		
 	   
 	    File file = 
-	      new File("C:\\Users\\Jordan\\eclipse-workspace\\advancedSoftwareDesign\\trunk\\advancedSoftwareDesign\\src\\speedTestProject\\output.txt"); 
+	      new File("C:\\Users\\Jordan\\eclipse-workspace\\speedTest\\src\\application\\output.txt"); 
 	    Scanner sc = new Scanner(file);
-	    String sentance = sc.nextLine();
-	    
+	   
 	    while (sc.hasNextLine()) {
 	        System.out.println(sc.nextLine());
 
 	    	}
+	    sc.close();
 		} 
 	
 	public void executeBat() throws IOException, InterruptedException {
 		
 		ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "speedtest.bat");
-		File dir = new File("C:\\Users\\Jordan\\eclipse-workspace\\advancedSoftwareDesign\\trunk\\advancedSoftwareDesign\\src\\speedTestProject");
+		File dir = new File("C:\\Users\\Jordan\\eclipse-workspace\\speedTest\\src\\application");
 		pb.directory(dir);
 		Process p = pb.start();
 		
 		TimeUnit.SECONDS.sleep(30);
+		
+		createGraphFile();
+		
+		
 	}
-	public void createGraphFile() throws IOException {
+	public static void createGraphFile() throws IOException {
 		
 		try {
             BufferedReader myReader =
-                    new BufferedReader(new FileReader("C:\\Users\\Jordan\\eclipse-workspace\\advancedSoftwareDesign\\trunk\\advancedSoftwareDesign\\src\\speedTestProject\\output.txt"));
+                    new BufferedReader(new FileReader("C:\\Users\\Jordan\\eclipse-workspace\\speedTest\\src\\application\\output.txt"));
 
             List<Double> myList = new ArrayList<Double>();
             int total = 0;
